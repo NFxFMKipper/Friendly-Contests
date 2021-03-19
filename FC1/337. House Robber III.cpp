@@ -8,7 +8,6 @@ public:
         if(node == nullptr)
         {
             arr[0] = arr[1] = 0;
-            //cout << arr[0] << " " << arr[1] << "\n";
             return arr;
         }
         int *lef = max_rob(node->left);
@@ -16,10 +15,8 @@ public:
         left[0] = lef[0];
         left[1] = lef[1];
         int *right = max_rob(node->right);
-        //cout << right[0] << " " << right[1] << " ";
         arr[0] = max(left[0], left[1])+max(right[0], right[1]);
         arr[1] = node->val+left[0]+right[0];
-        cout << arr[0] << " " << arr[1] << "\n";
         return arr;
     }
     
